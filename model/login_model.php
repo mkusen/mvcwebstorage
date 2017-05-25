@@ -27,6 +27,9 @@ class Login_model {
 
         if ($result == null) {
             $this->unknown = "<h4>Korisničko ime i/ili lozinka nisu ispravni!<br>Pokušajte ponovno.</h4>";
+                session_unset();
+        session_destroy();
+               echo 'clear';
         } else {
 
             $firstname = $result[0]['firstname'];

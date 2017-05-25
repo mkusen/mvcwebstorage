@@ -13,12 +13,5 @@ class Login_controller {
         $this->login_model->getOwner($username, $password);
     }
 
-    //destroy $_SESSION
-    public function clear() {
-        session_unset();
-        session_destroy();
-
-        echo 'clear';
-    }
 
 }

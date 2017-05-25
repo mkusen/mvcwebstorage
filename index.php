@@ -49,10 +49,6 @@ if (isset($username) && isset($password)) {
     $login_controller->{$_GET['action']}();
 } */
 
-//function that destroy $_SESSION
-//$login_controller->clear();
-
-
 /*if (!isset($_SESSION["username"]) && !isset($_SESSION["password"])) {
     $login_view->login_view();
 } else {
