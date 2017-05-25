@@ -11,8 +11,12 @@ class Login_view {
     }
 
     public function login_view() {
+        //login error: unknown user
         echo $this->login_model->unknown;
-        echo $this->login_model->user;
+        
+        echo $this->login_model->result;
+        
+        //calls (return) view object
         return $this->login_model->view_login;
     }
 

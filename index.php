@@ -1,6 +1,5 @@
 <?php
 
-
 header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 header("Cache-Control: no-cache");
 header("Pragma: no-cache");
@@ -27,6 +26,7 @@ $login_view = new Login_view($login_controller, $login_model);
 //$data_view = new Data_view($private_data_controller, $private_data_model);
 
 
+//test if $_SESSION is set; if is sets $username and $password from this values 
 if (isset($_SESSION["username"]) && isset($_SESSION["password"])) {
     $username = $_SESSION["username"];
     $password = $_SESSION["password"];
@@ -40,13 +40,16 @@ if (isset($_POST["password"])) {
     $password = md5($_POST["password"]);
 }
 
+//runs function login and pass values
 if (isset($username) && isset($password)) {
     $login_controller->login($username, $password);
 }
 
-if (isset($_GET['action']) && !empty($_GET['action'])) {
+/* if (isset($_GET['action']) && !empty($_GET['action'])) {
     $login_controller->{$_GET['action']}();
-}
+} */
+
+//function that destroy $_SESSION
 //$login_controller->clear();
 
 
@@ -56,6 +59,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
     $data_view->data_view();
 }*/
 
+//print view object
 $login_view->login_view();
   
  
