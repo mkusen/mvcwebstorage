@@ -17,7 +17,8 @@ class Login_view {
         echo $this->login_model->result;
         
         //calls (return) view object
-        return $this->login_model->view_login;
+        return $this->login_view = include './template/login_templ.html';
+       
     }
 
 }

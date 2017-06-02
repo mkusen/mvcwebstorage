@@ -8,9 +8,15 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Data</title>
+        
+        <script>    
+    if(typeof window.history.pushState === 'function') {
+        window.history.pushState({}, "Hide", "http://localhost/mvcwebstorage/index.php");
+    }
+</script>
     </head>
     <body>
-          <button><a href="index.php?action=clear">Odjava</a></button>
+        <button><a href="index.php?action=clear">Odjava</a></button>
          
     </body>
 </html>

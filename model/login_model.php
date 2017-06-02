@@ -1,21 +1,16 @@
 <?php
 
-session_start();
-
 class Login_model {
 
     private $connection;
-    public $view_login;
     public $unknown;
     public $user;
     public $result;
 
     function __construct($connection) {
         $this->connection = $connection;
-        //generate view object from template
-        $this->view_login = include './template/login_templ.html';
     }
-
+    
     public function getOwner($username, $password) {
 
         $query = "SELECT owner_id, firstname, lastname FROM owner WHERE"
@@ -27,9 +22,7 @@ class Login_model {
 
         if ($result == null) {
             $this->unknown = "<h4>Korisničko ime i/ili lozinka nisu ispravni!<br>Pokušajte ponovno.</h4>";
-                session_unset();
-        session_destroy();
-               echo 'clear';
+          
         } else {
 
             $firstname = $result[0]['firstname'];

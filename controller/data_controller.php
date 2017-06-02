@@ -1,6 +1,7 @@
 <?php
 
-class Private_data_controller{
+class Data_controller{
+    
     function __construct() {
         
     }
